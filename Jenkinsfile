@@ -5,7 +5,7 @@ pipeline{
                 steps{
                   sh '''
                   #! /bin/bash
-                  ssh try@18.134.12.28
+                  sudo ssh -i jenkins@18.134.12.28
                   touch prova.txt       
                   '''
                 }

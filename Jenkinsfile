@@ -4,11 +4,10 @@ pipeline{
             stage('Create file'){
                 steps{
                         sshagent(['ubuntu']) {
-                                sh '''
-                                ssh ubuntu@18.134.12.28
-                                pwd
-                                touch prova.txt 
-                                '''
+                             
+                                sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.134.12.28 uptime'
+                                sh 'ssh -v ubuntu@18.134.12.28'
+                              
                                      }                         
                 }
             }

@@ -11,7 +11,8 @@ pipeline{
                                 #!/bin/bash
                                 pwd
                                 touch yes.txt
-                                ENDSSH
+                                EOF
+                                'ENDSSH'
                                 '''
                                      }                         
                 }

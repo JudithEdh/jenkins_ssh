@@ -6,8 +6,12 @@ pipeline{
                         sshagent(['ubuntu']) {
                              
                                 sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.134.12.28 uptime'
-                                sh 'ssh -v ubuntu@18.134.12.28'
-                              
+                                sh '''
+                                ssh -v ubuntu@18.134.12.28<<-'ENDSSH'
+                                pwd
+                                touch yes.txt
+                                ENDSSH'
+                                '''
                                      }                         
                 }
             }
